@@ -9,8 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        "secondary-color": "#CF9784",
+        "hovered-color": "#fca5a5",
+      },
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+        primary: ["Lato", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        lemon: ["var(--font-lemon)"],
       },
     },
   },

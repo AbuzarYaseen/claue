@@ -25,3 +25,43 @@ body {
     text-wrap: balance;
   }
 }
+
+
+.carousel1-background {
+  background-image: url('../public/assests/slider1.png');
+  background-size: cover;
+  background-position: center;
+}
+.carousel2-background {
+  background-image: url('../public/assests/slider2.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.heroWomen{
+  background-image: url('../public/assests/trending/m4.png');
+  background-size: cover;
+  background-position: center;
+}
+.heroAccessries{
+  background-image: url('../public/assests/hero/accessories.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.watches{
+  background-image: url('../public/assests/hero/watches.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.divImg1{
+  background-image: url('../public/assests/divImg1.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.divImg2{
+  background-image: url('../public/assests/divImg2.jpg');
+  background-size: cover;
+  background-position: center;
+}
