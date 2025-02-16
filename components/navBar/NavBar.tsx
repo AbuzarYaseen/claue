@@ -9,14 +9,20 @@ import { CiShoppingCart } from "react-icons/ci";
 import { useRouter, usePathname } from "next/navigation";
 import { trendingItems } from "@/json/home/homeData";
 import { DownOutlined } from "@ant-design/icons";
-import { Dropdown, Space, Typography, Menu, MenuProps } from "antd"; // Import Menu
+import { Dropdown, Space, Typography, Menu, MenuProps, message } from "antd"; // Import Menu
 import { HiMenuAlt3 } from "react-icons/hi";
+import { useSelector } from "react-redux";
+import { AiOutlineClose } from "react-icons/ai";
 
 const NavBar = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const [user, setUser] = useState(null); // Track user state
   const router = useRouter();
   const pathname = usePathname();
+
+  const cart = useSelector((state: any) => {
+    return state.cart.count;
+  });
 
   const renderHome = () => {
     router.push("/home");
@@ -25,6 +31,11 @@ const NavBar = () => {
   const handleCartClick = () => {
     console.log("Cart clicked");
     // Add cart functionality if needed
+    if (cart === 0) {
+      message.error("Cart is empty.");
+    } else {
+      router.push("/cart-details");
+    }
   };
 
   // Extract unique categories
@@ -102,14 +113,43 @@ const NavBar = () => {
 
         {/* Icons */}
         <div className="flex w-36 justify-end space-x-4 md:w-36 md:gap-3">
+          {/* <CiSearch size={30} className="hover:cursor-pointer" /> */}
+
           <div className="relative inline-block">
             <CiShoppingCart
               size={30}
-              className="hover:cursor-pointer"
+              className="hover:cursor-pointer "
               onClick={handleCartClick}
-              aria-label="Shopping Cart"
+            />
+            {cart > 0 ? (
+              <span className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-black text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center xl:text-[17px]">
+                {cart}
+              </span>
+            ) : null}
+          </div>
+        </div>
+
+        {/* Side Drawer for Mobile and Tablet */}
+        <div
+          className={`fixed top-0 left-0 w-64 h-full bg-white shadow-lg z-50 transform transition-transform ${
+            isDrawerOpen ? "translate-x-0" : "-translate-x-full"
+          } lg:hidden`} // Show on mobile and tablet
+        >
+          <div className="flex justify-between items-center p-4">
+            <Image src={logo} width={80} height={80} alt="Logo" />
+            <AiOutlineClose
+              size={30}
+              className="cursor-pointer"
+              onClick={() => setDrawerOpen(false)}
             />
           </div>
+          <ul className="flex flex-col p-4 space-y-4">
+            {navLinks.map((link) => (
+              <li key={link.id} className="text-lg font-bold">
+                <Link href={link.url}>{link.label}</Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

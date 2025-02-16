@@ -5,9 +5,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { CiShoppingCart } from "react-icons/ci";
 import StarRating from "@/lib/StartRating";
+import { useDispatch } from "react-redux";
+import { addToCart } from "@/store/slices/slice";
+import { message } from "antd";
 
 const Trending = () => {
   const [hoveredProductId, setHoveredProductId] = useState(null);
+  const dispatch = useDispatch();
   // Function to handle product hover
   const handleHover = (itemId: any) => {
     setHoveredProductId(itemId);
@@ -20,6 +24,8 @@ const Trending = () => {
   };
 
   const handleAddToCartButtonClick = (item: any) => {
+    dispatch(addToCart(item));
+    message.success("Item added to cart.");
     console.log("Item added to cart.", item);
   };
 
@@ -59,7 +65,7 @@ const Trending = () => {
                     {hoveredProductId === item.id && (
                       <>
                         <button
-                          className="hidden md:block absolute top-28 font-semibold text-xs xl:text-sm left-7 md:top-1/2 md:left-12  lg:left-1/3 xl:left-1/4 bg-white text-black hover:bg-hovered-color hover:text-white rounded-3xl  p-2 px-4"
+                          className="hidden md:block absolute font-semibold text-xs xl:text-sm bg-white text-black hover:bg-black hover:text-white rounded-3xl p-2 px-4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                           onClick={() => handleAddToCartButtonClick(item)}
                         >
                           Add to cart

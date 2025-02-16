@@ -131,7 +131,7 @@ const Footer = () => {
           <div className="md:px-14 py-5 flex justify-center items-center md:justify-center ">
             <p className=" xl:text-[17px]">
               {" "}
-              © 2024 Copyright By CyberEvanglists.
+              © 2025 Copyright By AbuzarYaseen.
             </p>
           </div>
         </div>

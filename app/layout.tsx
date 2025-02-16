@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import NavBar from "@/components/navBar/NavBar";
-import Footer from "@/components/footer/Footer";
+import ReduxProvidor from "@/components/ReduxProvidor";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,9 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-inter`}>
-        <NavBar />
-        {children}
-        <Footer />
+        <ReduxProvidor>{children}</ReduxProvidor>
       </body>
     </html>
   );

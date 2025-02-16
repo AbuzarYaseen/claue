@@ -58,7 +58,7 @@ const BestSelling = () => {
                   {hoveredProductId === item.id && (
                     <>
                       <button
-                        className="hidden md:block absolute top-28 font-semibold text-xs xl:text-sm left-7 md:top-1/2 md:left-12  lg:left-1/3 xl:left-1/4 bg-white text-black hover:bg-hovered-color hover:text-white rounded-3xl md:font-bold p-2 px-4"
+                        className="hidden md:block absolute font-semibold text-xs xl:text-sm bg-white text-black hover:bg-black hover:text-white rounded-3xl p-2 px-4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                         onClick={() => handleAddToCartButtonClick(item)}
                       >
                         Add to cart
