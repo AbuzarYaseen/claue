@@ -13,7 +13,7 @@ const Hero = () => {
               onClick={() => {
                 router.push("/category-details/man");
               }}
-              className=" bg-white text-black hover:text-white hover:bg-secondary-color rounded-2xl text-[14px] xl:text-xl 
+              className=" bg-white text-black hover:text-white hover:bg-secondary-color rounded-2xl text-xs lg:text-sm 
           font-semibold p-2 px-10  mb-8"
             >
               Men
@@ -26,7 +26,7 @@ const Hero = () => {
               onClick={() => {
                 router.push("/category-details/watches");
               }}
-              className=" bg-white text-black hover:text-white hover:bg-secondary-color rounded-2xl text-[14px] xl:text-xl 
+              className=" bg-white text-black hover:text-white hover:bg-secondary-color rounded-2xl text-xs lg:text-sm 
           font-semibold p-2 px-10 mb-8"
             >
               Watches
@@ -34,8 +34,11 @@ const Hero = () => {
           </div>
           <div className="heroAccessries h-48 lg:h-1/2  hover:cursor-pointer transform hover:scale-105 transition-transform duration-300 flex  items-end justify-center">
             <button
-              className=" bg-white text-black hover:text-white hover:bg-secondary-color rounded-2xl text-[14px] xl:text-xl 
+              className=" bg-white text-black hover:text-white hover:bg-secondary-color rounded-2xl text-xs lg:text-sm 
           font-semibold p-2 px-10 mb-8"
+              onClick={() => {
+                router.push("/category-details/footwear");
+              }}
             >
               Accessories
             </button>

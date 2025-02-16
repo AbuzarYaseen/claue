@@ -68,8 +68,10 @@ const Blog = () => {
                 <div className="px-2">
                   <Image src={data.url} alt="image" />
                   <h2 className="xl:text-xl">{data.title}</h2>
-                  <p className="text-[#777977] xl:text-xl">{data.writter}</p>
-                  <p className="text-[#777977] text-[14px] xl:text-xl leading-6">
+                  <p className="text-[#777977] text-xs lg:text-sm font-semibold">
+                    {data.writter}
+                  </p>
+                  <p className="text-[#777977] text-xs lg:text-sm leading-6">
                     {data.description}
                   </p>
                 </div>
