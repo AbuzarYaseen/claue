@@ -10,7 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         "secondary-color": "#CF9784",
-        "hovered-color": "#fca5a5",
+        "hovered-color": "#D19C88",
+        "footer-bg": "#F6F6F8",
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],

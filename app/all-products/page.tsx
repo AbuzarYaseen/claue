@@ -5,6 +5,7 @@ import { trendingItems } from "@/json/home/homeData";
 import Link from "next/link";
 import Image from "next/image";
 import { CiShoppingCart } from "react-icons/ci";
+import StarRating from "@/lib/StartRating";
 
 const page = () => {
   const [hoveredProductId, setHoveredProductId] = useState(null);
@@ -32,7 +33,7 @@ const page = () => {
           <h1 className="font-bold text-[14px] mt-5 mb-5 md:text-xl xl:text-2xl">
             All Products
           </h1>
-          <p className="text-[14px] xl:text-xl">
+          <p className="text-xs xl:text-sm">
             Go sporty this summer with this vintage navy and white striped
             v-neck t-shirt from the Abercrombie & Fitch. Perfect for pairing
             with denim and white kicks for a stylish sporty vibe. Will fit a UK
@@ -64,7 +65,7 @@ const page = () => {
                 {hoveredProductId === item.id ? (
                   <>
                     <button
-                      className="hidden md:block absolute top-28 font-semibold text-[14px] xl:text-xl left-7 md:top-1/2 md:left-12 lg:left-1/3 xl:left-1/4 bg-white text-black hover:bg-black hover:text-white rounded-3xl md:font-bold p-2 px-4"
+                      className="hidden md:block absolute top-28 font-semibold text-xs left-7 md:top-1/2 md:left-12 lg:left-1/3 xl:left-1/4 bg-white text-black hover:bg-black hover:text-white rounded-3xl md:font-bold p-2 px-4"
                       onClick={() => handleAddToCartButtonClick(item)}
                     >
                       Add to cart
@@ -78,11 +79,12 @@ const page = () => {
                     src={item.url}
                     alt="product"
                   />
-                  <p className="mt-3 text-[14px] xl:text-xl md:font-bold">
+                  <p className="mt-3 text-xs xl:text-sm md:font-bold">
                     {item.itemName}
                   </p>
-                  <p className="text-[14px] xl:text-xl">{item.price}</p>
-                  <p className="text-[14px] xl:text-xl">{item.rating}⭐</p>
+                  <p className="text-xs xl:text-sm">$ {item.price}</p>
+                  {/* <p className="text-xs xl:text-sm">{item.rating}⭐</p> */}
+                  <StarRating rating={parseFloat(item.rating)} />
                 </Link>
               </div>
             );

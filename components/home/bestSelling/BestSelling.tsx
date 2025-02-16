@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { trendingItems } from "@/json/home/homeData";
 import { CiShoppingCart } from "react-icons/ci";
+import StarRating from "@/lib/StartRating";
 
 const BestSelling = () => {
   const [hoveredProductId, setHoveredProductId] = useState(null);
@@ -57,7 +58,7 @@ const BestSelling = () => {
                   {hoveredProductId === item.id && (
                     <>
                       <button
-                        className="hidden md:block absolute top-28 font-semibold text-[14px] xl:text-xl left-7 md:top-1/2 md:left-12  lg:left-1/3 xl:left-1/4 bg-white text-black hover:bg-black hover:text-white rounded-3xl md:font-bold p-2 px-4"
+                        className="hidden md:block absolute top-28 font-semibold text-xs xl:text-sm left-7 md:top-1/2 md:left-12  lg:left-1/3 xl:left-1/4 bg-white text-black hover:bg-hovered-color hover:text-white rounded-3xl md:font-bold p-2 px-4"
                         onClick={() => handleAddToCartButtonClick(item)}
                       >
                         Add to cart
@@ -71,11 +72,12 @@ const BestSelling = () => {
                       src={item.url}
                       alt="product"
                     />
-                    <p className="mt-3 text-[14px] xl:text-xl md:font-bold">
+                    <p className="mt-3 text-xs xl:text-sm md:font-bold">
                       {item.itemName}
                     </p>
-                    <p className="text-[14px] xl:text-xl">${item.price}</p>
-                    <p className="text-[14px] xl:text-xl">{item.rating}⭐</p>
+                    <p className="text-xs xl:text-sm">${item.price}</p>
+                    {/* <p className="text-xs xl:text-sm">{item.rating}⭐</p> */}
+                    <StarRating rating={parseFloat(item.rating)} />
                   </Link>
                 </div>
               );

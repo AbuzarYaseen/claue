@@ -40,12 +40,12 @@ const Banner = () => {
                 <h1 className="font-bold text-[25px] md:text-[50px] mb-7">
                   FLASH SALE OF 50%
                 </h1>
-                <p className="mb-7 hidden lg:block text-[14px] xl:text-xl">
+                <p className="mb-7 hidden lg:block text-xs lg:text-sm">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
                   natus porro voluptatem eligendi sit repudiandae dolores
                   maiores.
                 </p>
-                <button className="border-2 border-black p-2 rounded-3xl px-8 font-bold text-[14px]">
+                <button className="border-2 border-black p-2 rounded-3xl px-8 font-bold text-xs lg:text-sm">
                   Shop now
                 </button>
               </div>
@@ -62,12 +62,12 @@ const Banner = () => {
                 <h1 className="font-bold text-[25px] md:text-[50px] mb-7">
                   FLASH SALE OF 70%
                 </h1>
-                <p className="mb-7 hidden lg:block text-[14px] xl:text-xl">
+                <p className="mb-7 hidden lg:block text-xs lg:text-sm">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
                   natus porro voluptatem eligendi sit repudiandae dolores
                   maiores.
                 </p>
-                <button className="border-2 border-black p-2 rounded-3xl px-8 font-bold text-[14px]">
+                <button className="border-2 border-black p-2 rounded-3xl px-8 font-bold text-xs lg:text-sm">
                   Shop now
                 </button>
               </div>

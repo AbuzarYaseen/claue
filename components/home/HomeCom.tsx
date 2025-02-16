@@ -10,7 +10,7 @@ import Support from "./supportComponent/Support";
 const HomeCom = () => {
   return (
     <>
-      <Banner />
+      {/* <Banner /> */}
       <Hero />
       <Trending />
       <BestSelling />
